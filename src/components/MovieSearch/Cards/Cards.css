@@ -1,0 +1,27 @@
+p {
+  text-align: justify;
+  margin: 16px auto;
+  font-size: 1.2rem;
+}
+
+figure {
+  -webkit-box-shadow: 5px 8px 57px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 8px 57px -7px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 8px 57px -7px rgba(0, 0, 0, 0.75);
+  width: 100%;
+  border: 1px solid black;
+  height: 278px;
+  max-height: 278px;
+  margin: 40px;
+}
+
+figcaption {
+  position: relative;
+  left: 220px;
+  width: 74%;
+  font-size: 1.1rem;
+}
+
+figure img {
+  position: absolute;
+}
