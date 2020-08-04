@@ -1,14 +1,21 @@
 import PropType from 'prop-types'
 import React from 'react'
 
-export const Cards = ({movies}) => {
+import './Cards.css'
 
+export const Cards = ({ movies }) => {
 
-  return (
-    <div className="cards">
-
-    </div>
-  )
+ return movies.map((movie, i) =>
+    <figure key={i}>
+      <img alt="" src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}>
+      </img>
+      <figcaption>
+      <p>Title: &quot;{movie.title}&quot;</p>
+      <p>Release date: {movie.release_date}</p>
+      <p>Rating: {movie.vote_average}</p>
+      <p>Description: {movie.overview}</p>
+      </figcaption>
+    </figure>)
 }
 
 Cards.propType = {

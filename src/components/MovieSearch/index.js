@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Cards } from './Cards'
 import { Form } from './Form'
 
-
+import './MovieSearch.css'
 
 import api from 'api'
 
@@ -24,7 +24,9 @@ export const MovieSearch = () => {
   return (
     <main>
       <Form search={search} handler={searchHandler}/>
+      <div className="cards">
       <Cards movies={movies} />
+      </div>
     </main>
   )
 }

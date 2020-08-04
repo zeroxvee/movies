@@ -5,12 +5,6 @@ import './Form.css'
 
 export const Form = ({movies, handler}) => {
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault()
-  //   console.log(event)
-  //   submitHandler(event)
-  // }
-
   const handleSubmit = (event) => {
     event.preventDefault()
     handler(event)
