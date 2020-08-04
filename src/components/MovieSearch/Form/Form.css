@@ -1,0 +1,10 @@
+form {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+input {
+  width: 70vw;
+}
