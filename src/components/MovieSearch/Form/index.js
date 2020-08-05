@@ -3,7 +3,7 @@ import PropType from 'prop-types'
 
 import './Form.css'
 
-export const Form = ({movies, handler}) => {
+export const Form = ({ handler }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -19,9 +19,5 @@ export const Form = ({movies, handler}) => {
 }
 
 Form.propType = {
-  movies: PropType.string,
-  submitHandler: PropType.func,
-  value: PropType.string,
-  search: PropType.string,
   handler: PropType.func,
 }

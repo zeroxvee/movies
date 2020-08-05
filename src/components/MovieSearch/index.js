@@ -9,7 +9,7 @@ import api from 'api'
 
 export const MovieSearch = () => {
   const [movies, SetMovies] = useState([])
-  const [search, SetSearch] = useState('')
+  const [isVisible, SetIsVisible] = useState(false)
 
   const searchHandler = async (event) => {
     // we only need the results property
@@ -17,15 +17,22 @@ export const MovieSearch = () => {
     SetMovies(results)
   }
 
-  const cardHandler = (event) => {
+  const fetchSimilar = async (event) => {
+    // we only need the results property
+    const {results} = await api.similar(event)
+    SetMovies(results)
+  }
 
+  const showSimilarSection = () => {
+    SetIsVisible(wasOpened => !wasOpened)
+    //const results = await api.similar()
   }
 
   return (
     <main>
-      <Form search={search} handler={searchHandler}/>
+      <Form handler={searchHandler}/>
       <div className="cards">
-      <Cards movies={movies} />
+      <Cards movies={movies} showSimilar={showSimilarSection} isVisible={isVisible}/>
       </div>
     </main>
   )
