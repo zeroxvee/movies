@@ -17,11 +17,11 @@ export const MovieSearch = () => {
     SetMovies(results)
   }
 
-  const fetchSimilar = async (event) => {
-    // we only need the results property
-    const {results} = await api.similar(event)
-    SetMovies(results)
-  }
+  // const fetchSimilar = async (event) => {
+  //   // we only need the results property
+  //   const {results} = await api.similar(event)
+  //   SetMovies(results)
+  // }
 
   const showSimilarSection = () => {
     SetIsVisible(wasOpened => !wasOpened)

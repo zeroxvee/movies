@@ -1,7 +1,7 @@
 import PropType from 'prop-types'
 import React from 'react'
 
-import api from 'api'
+//import api from 'api'
 
 import './Cards.css'
 
@@ -12,9 +12,9 @@ export const Cards = ({ movies, showSimilar, isVisible }) => {
     showSimilar()
   }
 
-  const renderSimilarMovies = async () => {
+  // const renderSimilarMovies = async () => {
 
-  }
+  // }
 
 return movies.map((movie, i) => (
   <figure key={i}>
