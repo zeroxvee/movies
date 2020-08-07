@@ -1,7 +1,7 @@
-import React from 'react'
-import PropType from 'prop-types'
+import PropType from "prop-types"
+import React from "react"
 
-import './Form.css'
+import "./Form.css"
 
 export const Form = ({ handler }) => {
 

@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 
-import { Cards } from './Cards'
-import { Form } from './Form'
+import { Cards } from "./Cards"
+import { Form } from "./Form"
 
-import './MovieSearch.css'
+import "./MovieSearch.css"
 
-import api from 'api'
+import api from "api"
 
 export const MovieSearch = () => {
   const [movies, SetMovies] = useState([])
