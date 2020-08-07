@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from "prop-types"
+import React, { useState } from "react"
 
-import api from 'api'
+import api from "api"
 
-import './Cards.css'
+import "./Cards.css"
 import { SimilarCards } from './SimilarCards'
 
 export const Cards = ({ movies, showSimilar }) => {
