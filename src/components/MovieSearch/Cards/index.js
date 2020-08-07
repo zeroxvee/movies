@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import api from "api"
 
 import "./Cards.css"
-import { SimilarCards } from './SimilarCards'
 
 export const Cards = ({ movies, showSimilar }) => {
 
@@ -38,9 +37,6 @@ export const Cards = ({ movies, showSimilar }) => {
   }
   )
 }
-
-//{renderSimilarMovies(movie.id)}
-
 Cards.propTypes = {
   movies: PropTypes.array,
   handler: PropTypes.func,
