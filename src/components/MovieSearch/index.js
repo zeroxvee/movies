@@ -9,11 +9,11 @@ import api from 'api'
 
 export const MovieSearch = () => {
   const [movies, SetMovies] = useState([])
-  const [isVisible, SetIsVisible] = useState(false)
+  const [similarMovies, setSimilarMovies] = useState([])
 
   const searchHandler = async (event) => {
     // we only need the results property
-    const {results} = await api.index(event.target.elements[0].value)
+    const { results } = await api.index(event.target.elements[0].value)
     SetMovies(results)
   }
 
@@ -23,17 +23,27 @@ export const MovieSearch = () => {
   //   SetMovies(results)
   // }
 
-  const showSimilarSection = () => {
-    SetIsVisible(wasOpened => !wasOpened)
-    //const results = await api.similar()
+  const showSimilarSection = async (id) => {
+    const { results } = await api.similar(id)
+    setSimilarMovies(results)
+    return (
+      results.map((movie, i) => (
+        <div key={i}>
+          <p>{movie.title}</p>
+        </div>
+      )
+      )
+    )
   }
 
   return (
     <main>
-      <Form handler={searchHandler}/>
+      <Form handler={searchHandler} />
       <div className="cards">
-      <Cards movies={movies} showSimilar={showSimilarSection} isVisible={isVisible}/>
+        <Cards movies={movies}  />
       </div>
     </main>
   )
 }
+
+//showSimilar={showSimilarSection}
