@@ -3,21 +3,13 @@ import React from "react"
 
 import "./Form.css"
 
-export const Form = ({ handler }) => {
+export const Form = ({ handler }) => (
+  <form onSubmit={handler}>
+    <input></input>
+    <button type="Submit">Search</button>
+  </form>
+)
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    handler(event)
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input></input>
-      <button type="Submit">Search</button>
-    </form>
-  )
-}
-
-Form.propType = {
+Form.propTypes = {
   handler: PropType.func,
 }
