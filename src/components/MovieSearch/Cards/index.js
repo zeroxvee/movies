@@ -38,7 +38,7 @@ export const Cards = ({ movies, showSimilar }) => {
   )
 }
 Cards.propTypes = {
-  movies: PropTypes.array,
+  movies: PropTypes.array.isRequired,
   handler: PropTypes.func,
   showSimilar: PropTypes.func,
 }
