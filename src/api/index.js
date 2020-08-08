@@ -18,15 +18,11 @@ export default {
     catch (error) {
       return `Currently facing issue with: ${error.message}`
     }
-
   },
 
   // Use movie id to find the recommendations
   async similar(id) {
     try {
-      console.log(
-        `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`
-      )
       const res = await fetch(
         `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
 
