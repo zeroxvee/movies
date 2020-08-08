@@ -1,10 +1,10 @@
 import PropTypes from "prop-types"
-import React from "react"
+import React, {useState} from "react"
 
 import api from "api"
 
-
 export const Card = ({ movie }) => {
+  // TODO{v.bazhutin}: Consider removing state management from here and adding 'similarMovies' to the 'top level' movies for more consolidated state.
   const [similarMovies, setSimilarMovies] = useState([])
 
   const handleClick = async (event) => {
@@ -12,6 +12,10 @@ export const Card = ({ movie }) => {
 
     // Only show 3 of them
     setSimilarMovies(results.slice(0, 2))
+  }
+
+  const renderSimilarMovies = () => {
+    return <ul><li>{similarMovies[0].title}</li></ul>
   }
 
   return (
@@ -28,6 +32,7 @@ export const Card = ({ movie }) => {
         </p>
         <p>Description: {movie.overview}</p>
         <button onClick={handleClick}>Similar Movies</button>
+        {similarMovies.length ? renderSimilarMovies() : null}
       </figcaption>
     </figure>
   )
