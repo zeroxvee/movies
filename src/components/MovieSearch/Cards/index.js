@@ -19,8 +19,7 @@ export const Cards = ({ movies }) => {
         alt=""
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
       ></img>
-      <figcaption>
-        <div data-id={movie.id}>
+      <figcaption data-id={movie.id}>
           <p>Title: &quot;{movie.title}&quot;</p>
           <p>Release date: {movie.release_date}</p>
           <p className={movie.vote_average >= 7 ? "good" : "bad"}>
@@ -28,7 +27,6 @@ export const Cards = ({ movies }) => {
           </p>
           <p>Description: {movie.overview}</p>
           <button onClick={handleClick}>Similar Movies</button>
-        </div>
       </figcaption>
     </figure>
     // TODO{v.bazhutin}: Pass similarmovies to another component and add a parent wrapper (<Fragment>)
