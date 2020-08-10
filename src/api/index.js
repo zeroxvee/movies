@@ -18,13 +18,13 @@ export default {
     catch (error) {
       return `Currently facing issue with: ${error.message}`
     }
-
   },
 
-  async similar(query) {
+  // Use movie id to find the recommendations
+  async similar(id) {
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${query}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
+        `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&page=1`)
 
       if (res.status > 400) {
         throw new Error(res.status)
