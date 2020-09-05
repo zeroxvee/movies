@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React, {useState} from "react"
+import React, { useState } from "react"
 
 import api from "api"
 
@@ -14,8 +14,19 @@ export const Card = ({ movie }) => {
     setSimilarMovies(results.slice(0, 2))
   }
 
-  const renderSimilarMovies = () => {
-    return <ul><li>{similarMovies[0].title}</li></ul>
+  const renderSimilarMovies = (event) => {
+    console.log(event.target)
+    return (
+      <div>
+        {similarMovies.map((movie, i) => (
+          <div className="similar" key={i}>
+            <img src={`https://image.tmdb.org/t/p/w92${movie.poster_path}`} alt=""></img>
+            <p>{movie.original_title}</p>
+          </div>
+        ))
+        }
+      </div>
+    )
   }
 
   return (
@@ -31,7 +42,7 @@ export const Card = ({ movie }) => {
           Rating: {movie.vote_average}
         </p>
         <p>Description: {movie.overview}</p>
-        <button onClick={handleClick}>Similar Movies</button>
+        <button onClick={{handleClick}}>Similar Movies</button>
         {similarMovies.length ? renderSimilarMovies() : null}
       </figcaption>
     </figure>

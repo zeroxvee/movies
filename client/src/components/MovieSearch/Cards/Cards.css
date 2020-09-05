@@ -18,7 +18,7 @@ figure {
   box-shadow: 5px 8px 57px -7px rgba(0, 0, 0, 0.75);
   width: 100%;
   border: 1px solid black;
-  height: 278px;
+  height: fit-content;
   max-height: 278px;
   margin: 40px;
 }
@@ -32,4 +32,8 @@ figcaption {
 
 figure img {
   position: absolute;
+}
+
+.similar {
+
 }
